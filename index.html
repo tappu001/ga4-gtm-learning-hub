@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 & GTM Mastery Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg id="sun-icon" viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="moon-icon" viewBox="0 0 24 24" width="20" height="20" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <h2>GA4 & GTM Mastery</h2>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-section="dashboard">
+                        <span class="nav-icon">📊</span>
+                        Dashboard
+                    </a>
+                </li>
+                
+                <li class="nav-item has-submenu">
+                    <a href="#" class="nav-link" data-section="ga4-learning">
+                        <span class="nav-icon">📈</span>
+                        GA4 Learning Hub
+                        <span class="submenu-arrow">▶</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#" data-section="ga4-fundamentals">Fundamentals & Setup</a></li>
+                        <li><a href="#" data-section="ga4-events">Event Architecture Deep Dive</a></li>
+                        <li><a href="#" data-section="ga4-users">User Identification & Tracking</a></li>
+                        <li><a href="#" data-section="ga4-enhanced">Enhanced Measurement</a></li>
+                        <li><a href="#" data-section="ga4-cross-domain">Cross-Domain Tracking</a></li>
+                        <li><a href="#" data-section="ga4-bigquery">BigQuery Integration</a></li>
+                        <li><a href="#" data-section="ga4-privacy">Privacy & Compliance</a></li>
+                        <li><a href="#" data-section="ga4-advanced">Advanced Configuration</a></li>
+                        <li><a href="#" data-section="ga4-debugging">Debugging & Troubleshooting</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item has-submenu">
+                    <a href="#" class="nav-link" data-section="gtm-mastery">
+                        <span class="nav-icon">🏷️</span>
+                        GTM Mastery
+                        <span class="submenu-arrow">▶</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#" data-section="gtm-container">Container Setup & Management</a></li>
+                        <li><a href="#" data-section="gtm-tags">Tags Deep Dive</a></li>
+                        <li><a href="#" data-section="gtm-triggers">Triggers Comprehensive Guide</a></li>
+                        <li><a href="#" data-section="gtm-variables">Variables (Built-in & Custom)</a></li>
+                        <li><a href="#" data-section="gtm-datalayer">DataLayer Implementation</a></li>
+                        <li><a href="#" data-section="gtm-server">Server-Side Tagging</a></li>
+                        <li><a href="#" data-section="gtm-debug">Advanced Debugging</a></li>
+                        <li><a href="#" data-section="gtm-performance">Performance Optimization</a></li>
+                        <li><a href="#" data-section="gtm-version">Version Control & Workspaces</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="event-creator">
+                        <span class="nav-icon">⚡</span>
+                        Event Creator
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="datalayer-studio">
+                        <span class="nav-icon">🔧</span>
+                        DataLayer Studio
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="quiz-center">
+                        <span class="nav-icon">🧠</span>
+                        Quiz Center
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="audit-tools">
+                        <span class="nav-icon">✅</span>
+                        Audit Tools
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="debugging-guide">
+                        <span class="nav-icon">🔍</span>
+                        Debugging Guide
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="resources">
+                        <span class="nav-icon">📚</span>
+                        Resource Library
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Progress Bar -->
+        <div class="progress-header">
+            <div class="progress-bar">
+                <div class="progress-fill" id="overall-progress"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0% Complete</span>
+        </div>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="container">
+                <h1>Welcome to GA4 & GTM Mastery Platform</h1>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Study Progress</h3>
+                        <div class="progress-chart">
+                            <canvas id="progressChart" width="300" height="200"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Achievement Badges</h3>
+                        <div class="badges-grid" id="badges-grid">
+                            <div class="badge locked">🏆 GA4 Expert</div>
+                            <div class="badge locked">🎯 GTM Master</div>
+                            <div class="badge locked">📊 Quiz Champion</div>
+                            <div class="badge locked">✅ Audit Pro</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Study Streak</h3>
+                        <div class="streak-counter">
+                            <span class="streak-number" id="streak-count">0</span>
+                            <span class="streak-label">days</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn--primary" data-section="quiz-center">Take Quiz</button>
+                            <button class="btn btn--secondary" data-section="event-creator">Create Event</button>
+                            <button class="btn btn--outline" data-section="audit-tools">Run Audit</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <span class="activity-text">Started GA4 Fundamentals</span>
+                            <span class="activity-time">Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GA4 Learning Sections -->
+        <section id="ga4-fundamentals" class="content-section learning-section">
+            <div class="container">
+                <div class="learning-header">
+                    <h1>GA4 Fundamentals & Setup</h1>
+                    <div class="learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <span>0% Complete</span>
+                    </div>
+                </div>
+                
+                <div class="learning-content">
+                    <div class="content-nav">
+                        <ul>
+                            <li><a href="#event-model">Event-Based Model Architecture</a></li>
+                            <li><a href="#property-setup">Property Configuration</a></li>
+                            <li><a href="#data-streams">Data Streams Management</a></li>
+                            <li><a href="#enhanced-measurement">Enhanced Measurement Setup</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-body">
+                        <h2 id="event-model">GA4's Revolutionary Event-Based Model</h2>
+                        <p>Google Analytics 4 represents a fundamental shift from Universal Analytics' session-based model to a revolutionary event-based architecture. This paradigm change enables more flexible, comprehensive tracking that better reflects modern user behavior across devices and platforms.</p>
+                        
+                        <h3>Core Architectural Principles</h3>
+                        <p>Unlike Universal Analytics which relied heavily on pageviews and sessions, GA4 treats everything as an event. This unified approach means that:</p>
+                        <ul>
+                            <li><strong>Page views are events:</strong> Traditional pageviews are now 'page_view' events with parameters</li>
+                            <li><strong>User interactions are events:</strong> Clicks, scrolls, file downloads all become structured events</li>
+                            <li><strong>Conversions are enhanced events:</strong> Goals are replaced by conversion events with rich parameter data</li>
+                            <li><strong>Custom business actions:</strong> Any meaningful user action can be tracked as a custom event</li>
+                        </ul>
+                        
+                        <div class="code-block">
+                            <h4>Example: Enhanced Event Structure</h4>
+                            <pre><code>// Traditional UA Pageview
+ga('send', 'pageview', '/products/analytics-course');
+
+// GA4 Event with Rich Parameters
+gtag('event', 'page_view', {
+  page_title: 'Advanced Analytics Course',
+  page_location: 'https://example.com/products/analytics-course',
+  content_group1: 'Education',
+  content_group2: 'Analytics',
+  user_engagement: 'high_value_page'
+});</code></pre>
+                        </div>
+                        
+                        <h2 id="property-setup">Strategic Property Configuration</h2>
+                        <p>Proper GA4 property setup forms the foundation of accurate data collection and analysis. The configuration process involves multiple critical decisions that impact data quality and analysis capabilities.</p>
+                        
+                        <h3>Property Hierarchy Best Practices</h3>
+                        <div class="info-box">
+                            <h4>Critical Configuration Elements:</h4>
+                            <ul>
+                                <li><strong>Industry Category:</strong> Select the most specific category affecting available features</li>
+                                <li><strong>Reporting Time Zone:</strong> Align with business operations, impacts daily reporting boundaries</li>
+                                <li><strong>Currency:</strong> Set primary business currency for ecommerce tracking</li>
+                                <li><strong>Data Retention:</strong> Configure maximum 14-month retention for enhanced analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <h2 id="data-streams">Data Streams: The Collection Foundation</h2>
+                        <p>Data streams represent the various sources feeding data into your GA4 property. Each stream type serves specific tracking requirements and offers unique configuration options.</p>
+                        
+                        <h3>Web Data Streams</h3>
+                        <p>Web streams capture user interactions from websites and web applications. Critical configuration includes:</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Enhanced Measurement</h4>
+                                <p>Automatically tracks scrolls, outbound clicks, site search, video engagement, and file downloads without additional code.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Cross-Domain Measurement</h4>
+                                <p>Enable seamless user journey tracking across multiple domains with automatic linker parameter handling.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Internal Traffic Filtering</h4>
+                                <p>Exclude internal team traffic using IP ranges, ensuring data quality and accurate user metrics.</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn--primary mark-complete" data-section="ga4-fundamentals">Mark as Complete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Creator Section -->
+        <section id="event-creator" class="content-section">
+            <div class="container">
+                <h1>Interactive Event Creator</h1>
+                <p>Create custom GA4 events with proper parameter validation and code generation.</p>
+                
+                <div class="event-creator-grid">
+                    <div class="creator-panel">
+                        <h3>Event Configuration</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Event Name</label>
+                            <input type="text" id="event-name" class="form-control" placeholder="e.g., custom_click">
+                            <small>Use lowercase with underscores, max 40 characters</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Event Category</label>
+                            <select id="event-category" class="form-control">
+                                <option value="engagement">Engagement</option>
+                                <option value="conversion">Conversion</option>
+                                <option value="custom">Custom</option>
+                                <option value="ecommerce">Ecommerce</option>
+                            </select>
+                        </div>
+                        
+                        <div class="parameters-section">
+                            <h4>Event Parameters</h4>
+                            <div id="parameters-list">
+                                <div class="parameter-row">
+                                    <input type="text" placeholder="Parameter name" class="param-name">
+                                    <select class="param-type">
+                                        <option value="string">String</option>
+                                        <option value="number">Number</option>
+                                        <option value="boolean">Boolean</option>
+                                    </select>
+                                    <input type="text" placeholder="Value" class="param-value">
+                                    <button class="btn-remove">×</button>
+                                </div>
+                            </div>
+                            <button id="add-parameter" class="btn btn--secondary">Add Parameter</button>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button id="generate-code" class="btn btn--primary">Generate Code</button>
+                            <button id="save-event" class="btn btn--outline">Save Event</button>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-panel">
+                        <h3>Code Preview</h3>
+                        <div class="code-tabs">
+                            <button class="tab-btn active" data-tab="gtag">gtag.js</button>
+                            <button class="tab-btn" data-tab="gtm">GTM</button>
+                            <button class="tab-btn" data-tab="measurement">Measurement Protocol</button>
+                        </div>
+                        
+                        <div class="code-preview">
+                            <pre id="generated-code"><code>// Configure your event above to generate code</code></pre>
+                        </div>
+                        
+                        <div class="validation-status" id="validation-status">
+                            <p>✅ Event configuration is valid</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="saved-events">
+                    <h3>Saved Events Library</h3>
+                    <div id="saved-events-list" class="events-grid">
+                        <!-- Saved events will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DataLayer Studio Section -->
+        <section id="datalayer-studio" class="content-section">
+            <div class="container">
+                <h1>DataLayer Studio</h1>
+                <p>Build, validate, and test complex dataLayer implementations with nested objects and ecommerce events.</p>
+                
+                <div class="studio-layout">
+                    <div class="studio-sidebar">
+                        <h3>Templates</h3>
+                        <div class="template-list">
+                            <button class="template-btn" data-template="basic">Basic Event</button>
+                            <button class="template-btn" data-template="ecommerce">Ecommerce Purchase</button>
+                            <button class="template-btn" data-template="user">User Properties</button>
+                            <button class="template-btn" data-template="custom">Custom Event</button>
+                        </div>
+                        
+                        <h3>Validation</h3>
+                        <div class="validation-panel">
+                            <div id="validation-results">
+                                <p>Build your dataLayer to see validation results</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="studio-main">
+                        <div class="builder-header">
+                            <h3>DataLayer Builder</h3>
+                            <div class="builder-actions">
+                                <button id="validate-datalayer" class="btn btn--primary">Validate</button>
+                                <button id="export-datalayer" class="btn btn--secondary">Export</button>
+                                <button id="clear-builder" class="btn btn--outline">Clear</button>
+                            </div>
+                        </div>
+                        
+                        <div class="builder-interface">
+                            <div class="json-editor">
+                                <textarea id="datalayer-editor" placeholder='dataLayer.push({
+  "event": "custom_event",
+  "event_parameters": {
+    "parameter_1": "value",
+    "parameter_2": 123
+  }
+});'></textarea>
+                            </div>
+                            
+                            <div class="builder-tools">
+                                <div class="tool-group">
+                                    <h4>Quick Add</h4>
+                                    <button class="tool-btn" data-add="event">Add Event</button>
+                                    <button class="tool-btn" data-add="ecommerce">Add Ecommerce</button>
+                                    <button class="tool-btn" data-add="user">Add User Props</button>
+                                </div>
+                                
+                                <div class="tool-group">
+                                    <h4>Ecommerce Items</h4>
+                                    <button class="tool-btn" data-add="item">Add Item</button>
+                                    <button class="tool-btn" data-add="promotion">Add Promotion</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="output-preview">
+                            <h4>Generated Output</h4>
+                            <div class="output-tabs">
+                                <button class="tab-btn active" data-tab="formatted">Formatted JSON</button>
+                                <button class="tab-btn" data-tab="minified">Minified</button>
+                                <button class="tab-btn" data-tab="gtm">GTM Implementation</button>
+                            </div>
+                            <pre id="output-display"><code>{}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-center" class="content-section">
+            <div class="container">
+                <h1>Quiz Center</h1>
+                <p>Test your GA4 and GTM knowledge with challenging certification-level questions.</p>
+                
+                <div class="quiz-dashboard">
+                    <div class="quiz-stats">
+                        <div class="stat-card">
+                            <h3 id="quiz-score">0%</h3>
+                            <p>Overall Score</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="quizzes-completed">0</h3>
+                            <p>Quizzes Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="streak-count-quiz">0</h3>
+                            <p>Correct Streak</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-categories">
+                        <h3>Quiz Categories</h3>
+                        <div class="category-grid">
+                            <button class="category-btn" data-category="ga4" data-difficulty="beginner">
+                                <span class="category-icon">📊</span>
+                                <span class="category-name">GA4 Basics</span>
+                                <span class="category-count">15 questions</span>
+                            </button>
+                            <button class="category-btn" data-category="ga4" data-difficulty="intermediate">
+                                <span class="category-icon">📈</span>
+                                <span class="category-name">GA4 Advanced</span>
+                                <span class="category-count">20 questions</span>
+                            </button>
+                            <button class="category-btn" data-category="gtm" data-difficulty="beginner">
+                                <span class="category-icon">🏷️</span>
+                                <span class="category-name">GTM Basics</span>
+                                <span class="category-count">12 questions</span>
+                            </button>
+                            <button class="category-btn" data-category="gtm" data-difficulty="advanced">
+                                <span class="category-icon">⚙️</span>
+                                <span class="category-name">GTM Expert</span>
+                                <span class="category-count">18 questions</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="quiz-interface" class="quiz-interface" style="display: none;">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="quiz-progress"></div>
+                            </div>
+                            <span id="question-counter">Question 1 of 10</span>
+                        </div>
+                        <button id="end-quiz" class="btn btn--outline">End Quiz</button>
+                    </div>
+                    
+                    <div class="quiz-content">
+                        <div class="question-card">
+                            <div class="question-difficulty" id="question-difficulty">Intermediate</div>
+                            <h3 id="question-text">Question will appear here</h3>
+                            <div class="options-list" id="options-list">
+                                <!-- Options will be populated dynamically -->
+                            </div>
+                            <div class="question-actions">
+                                <button id="submit-answer" class="btn btn--primary" disabled>Submit Answer</button>
+                                <button id="next-question" class="btn btn--secondary" style="display: none;">Next Question</button>
+                            </div>
+                            <div id="answer-feedback" class="answer-feedback" style="display: none;">
+                                <!-- Feedback will be shown here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <div class="results-card">
+                        <h2>Quiz Complete!</h2>
+                        <div class="score-display">
+                            <span class="score-number" id="final-score">0</span>
+                            <span class="score-label">out of <span id="total-questions">10</span></span>
+                        </div>
+                        <div class="performance-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Correct:</span>
+                                <span class="breakdown-value" id="correct-count">0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Incorrect:</span>
+                                <span class="breakdown-value" id="incorrect-count">0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Percentage:</span>
+                                <span class="breakdown-value" id="percentage-score">0%</span>
+                            </div>
+                        </div>
+                        <div class="results-actions">
+                            <button id="retake-quiz" class="btn btn--primary">Retake Quiz</button>
+                            <button id="new-quiz" class="btn btn--secondary">Try Different Category</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audit Tools Section -->
+        <section id="audit-tools" class="content-section">
+            <div class="container">
+                <h1>Professional Audit Tools</h1>
+                <p>Comprehensive GA4 and GTM audit framework with weighted scoring and detailed recommendations.</p>
+                
+                <div class="audit-selector">
+                    <div class="audit-options">
+                        <button class="audit-btn active" data-audit="ga4">
+                            <span class="audit-icon">📊</span>
+                            <h3>GA4 Audit</h3>
+                            <p>90+ checkpoints across 8 categories</p>
+                        </button>
+                        <button class="audit-btn" data-audit="gtm">
+                            <span class="audit-icon">🏷️</span>
+                            <h3>GTM Audit</h3>
+                            <p>90+ checkpoints across 7 categories</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="audit-interface" class="audit-interface">
+                    <div class="audit-progress">
+                        <div class="progress-summary">
+                            <h3>Audit Progress</h3>
+                            <div class="progress-stats">
+                                <span>Score: <strong id="audit-score">0/100</strong></span>
+                                <span>Completed: <strong id="completed-items">0/90</strong></span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="audit-progress-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="audit-categories" id="audit-categories">
+                        <!-- Categories will be populated dynamically -->
+                    </div>
+                    
+                    <div class="audit-actions">
+                        <button id="save-audit" class="btn btn--primary">Save Progress</button>
+                        <button id="generate-report" class="btn btn--secondary">Generate Report</button>
+                        <button id="reset-audit" class="btn btn--outline">Reset Audit</button>
+                    </div>
+                </div>
+                
+                <div id="audit-report" class="audit-report" style="display: none;">
+                    <div class="report-header">
+                        <h2>Audit Report</h2>
+                        <div class="report-score">
+                            <span class="score-number" id="report-score">0</span>
+                            <span class="score-label">/100</span>
+                        </div>
+                    </div>
+                    
+                    <div class="report-summary">
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <h4>Critical Issues</h4>
+                                <span class="issue-count critical" id="critical-issues">0</span>
+                            </div>
+                            <div class="summary-item">
+                                <h4>Medium Issues</h4>
+                                <span class="issue-count medium" id="medium-issues">0</span>
+                            </div>
+                            <div class="summary-item">
+                                <h4>Low Issues</h4>
+                                <span class="issue-count low" id="low-issues">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendations" id="recommendations">
+                        <!-- Recommendations will be populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other sections will be added similarly -->
+        <section id="debugging-guide" class="content-section">
+            <div class="container">
+                <h1>Debugging Guide</h1>
+                <p>Step-by-step troubleshooting for common GA4 and GTM issues.</p>
+                <!-- Content will be added -->
+            </div>
+        </section>
+
+        <section id="resources" class="content-section">
+            <div class="container">
+                <h1>Resource Library</h1>
+                <p>Curated collection of official documentation, tutorials, and community resources.</p>
+                <!-- Content will be added -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
